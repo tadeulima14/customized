@@ -35,6 +35,10 @@ fetch("houses.json")
                 html+= "</dl>";
                 container.innerHTML = html;
             }
+            
+            
+        }); // end of event listener func
+
                     //fetch color from API
                     fetch("https://www.colr.org/json/color/random") // needs to be outside of event listener or -
                     .then((response) => response.json()) // page will not initialize with color chnage, only when dropdown value is changed
@@ -44,9 +48,7 @@ fetch("houses.json")
                         document.body.style.backgroundColor= `#${randomColor}`;
                     })
                     .catch((error) => console.error("Error fetching random color", error));
-                    fetchAndChangeColor();        
-            
-        }); // end of event listener func
+                    fetchAndChangeColor();
     })
     .catch((err) => console.log("Oops!", err));
 // This only runs if there is an error during the above process
